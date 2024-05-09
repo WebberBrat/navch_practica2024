@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+
+\begin{document}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+  \begin{axis}[
+    xlabel=$x$,
+    ylabel=$\tan(x)$,
+    xmin=-3*pi,xmax=3*pi,
+    ymin=-5,ymax=5,
+    domain=-pi:pi,
+    samples=200,
+    axis lines=center,
+    legend pos=outer north east,
+    legend style={font=\small},
+    width=10cm,
+    height=7cm,
+    xtick={-3.14159, -1.5708, 1.5708, 3.14159},
+    xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$}
+  ]
+  \addplot[blue,smooth] {tan(deg(x))};
+  \addlegendentry{$\tan(x)$}
+  \end{axis}
+\end{tikzpicture}
+
+\label{fig:tangent_plot}
+\end{figure}
+
+\end{document}
